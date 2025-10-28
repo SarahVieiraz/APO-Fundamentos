@@ -54,7 +54,6 @@ gerador-de-curriculo/
 
 ## Contato
 - Autora: Sarah Bertan
-- RA: [insira]
 - UNIPAR EAD
 
 ## Licença
