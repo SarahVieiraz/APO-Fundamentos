@@ -55,6 +55,3 @@ gerador-de-curriculo/
 ## Contato
 - Autora: Sarah Bertan
 - UNIPAR EAD
-
-## Licença
-Este projeto é licenciado sob a Licença MIT. Veja o arquivo LICENSE (ou inclua o texto da licença abaixo) para mais detalhes.
