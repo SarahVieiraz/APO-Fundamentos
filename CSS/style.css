@@ -1,1 +1,62 @@
- 
+/* Estilos gerais */
+html, body {
+  height: 100%;
+}
+body {
+  background-color: #f7f9fc;
+  color: #212529;
+}
+
+/* Navbar azul */
+.navbar {
+  background-color: #0d6efd;
+}
+.navbar .navbar-brand {
+  color: #fff;
+}
+.navbar .navbar-brand:hover {
+  color: #e9ecef;
+}
+
+/* Sidebar cinza */
+.sidebar {
+  background-color: #f1f3f5;
+  border-right: 1px solid #dee2e6;
+}
+
+/* Cards arredondados */
+.card {
+  border-radius: 0.75rem;
+}
+
+/* Preview ajustes */
+.cv-preview .badge {
+  font-weight: 500;
+}
+
+/* Espaçamentos gerais */
+.repeatable-item .btn-remove {
+  line-height: 1;
+}
+
+/* Responsivo */
+@media (max-width: 576px) {
+  .navbar .btn {
+    margin-top: .5rem;
+  }
+}
+
+/* Impressão */
+@media print {
+  body {
+    background: #fff !important;
+    font-size: 12pt;
+  }
+  .no-print {
+    display: none !important;
+  }
+  .card {
+    box-shadow: none !important;
+    border-color: #ccc;
+  }
+}
