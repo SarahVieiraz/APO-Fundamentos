@@ -1,62 +1,69 @@
-/* Estilos gerais */
-html, body {
-  height: 100%;
+/* Tema e fundamentos visuais */
+:root {
+  --navy-900: #1f2a3a;
+  --navy-800: #24344a;
+  --navy-700: #2b3e57;
+  --blue-500: #0d6efd;
+  --text-base: #212529;
+  --muted: #6c757d;
+  --surface: #ffffff;
 }
+
+html, body { height: 100%; }
 body {
-  background-color: #f7f9fc;
-  color: #212529;
+  background: linear-gradient(180deg, #f6f9ff 0%, #eef3f9 100%);
+  color: var(--text-base);
 }
 
-/* Navbar azul */
+/* Navbar escura com leve sombra */
 .navbar {
-  background-color: #0d6efd;
+  background-color: var(--navy-800);
+  box-shadow: 0 2px 12px rgba(0,0,0,.08);
 }
-.navbar .navbar-brand {
-  color: #fff;
-}
-.navbar .navbar-brand:hover {
-  color: #e9ecef;
-}
+.navbar .navbar-brand { color: #fff; letter-spacing: .2px; }
+.navbar .navbar-brand:hover { color: #e9ecef; }
 
-/* Sidebar cinza */
+/* Sidebar navy (como no design) */
 .sidebar {
-  background-color: #f1f3f5;
-  border-right: 1px solid #dee2e6;
+  background-color: var(--navy-700);
+  color: #fff;
+  border-radius: .75rem;
 }
+.sidebar h1, .sidebar h2, .sidebar h6 { color: #fff; }
+.sidebar .list-unstyled li { margin-bottom: .25rem; }
+.sidebar .text-muted { color: #e5eaf1 !important; opacity: .85; }
 
-/* Cards arredondados */
-.card {
-  border-radius: 0.75rem;
-}
+/* Cards arredondados e sombra suave */
+.card { border-radius: .75rem; box-shadow: 0 4px 18px rgba(31,42,58,.08); }
+.card .badge { font-weight: 500; }
 
-/* Preview ajustes */
-.cv-preview .badge {
-  font-weight: 500;
+/* Títulos de seção do preview */
+.cv-preview .section-title {
+  font-weight: 600;
+  border-bottom: 2px solid var(--blue-500);
+  padding-bottom: .5rem;
+  margin-bottom: 1rem;
 }
 
 /* Espaçamentos gerais */
-.repeatable-item .btn-remove {
-  line-height: 1;
-}
+.repeatable-item .btn-remove { line-height: 1; }
+
+/* Botões utilitários na app bar */
+.no-print .btn { border-radius: .5rem; }
 
 /* Responsivo */
 @media (max-width: 576px) {
-  .navbar .btn {
-    margin-top: .5rem;
-  }
+  .navbar .btn { margin-top: .5rem; }
+  .sidebar { margin-bottom: 1rem; }
 }
 
 /* Impressão */
 @media print {
-  body {
-    background: #fff !important;
-    font-size: 12pt;
-  }
-  .no-print {
-    display: none !important;
-  }
-  .card {
-    box-shadow: none !important;
-    border-color: #ccc;
-  }
+  body { background: #fff !important; font-size: 12pt; }
+  .no-print { display: none !important; }
+  .card { box-shadow: none !important; border-color: #ccc; }
 }
+
+/* Página de sucesso */
+.success-card { border-radius: .75rem; }
+.success-icon { width: 72px; height: 72px; }

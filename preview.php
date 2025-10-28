@@ -31,7 +31,7 @@ function e($str) { return htmlspecialchars((string)$str, ENT_QUOTES, 'UTF-8'); }
         <div class="row">
             <!-- Sidebar Esquerda -->
             <div class="col-12 col-md-4">
-                <div class="sidebar p-3 rounded">
+                <div class="sidebar p-4">
                     <h1 class="h4 mb-3"><?= e($dados['nome'] ?? '') ?></h1>
                     <ul class="list-unstyled mb-3">
                         <li><strong>Idade:</strong> <?= isset($dados['idade']) && $dados['idade'] !== null ? e($dados['idade']) : '-' ?></li>
@@ -39,11 +39,11 @@ function e($str) { return htmlspecialchars((string)$str, ENT_QUOTES, 'UTF-8'); }
                         <li><strong>Telefone:</strong> <?= e($dados['telefone'] ?? '') ?></li>
                     </ul>
                     <div class="mb-3">
-                        <h2 class="h6">Objetivo</h2>
+                        <h2 class="h6 text-uppercase">Objetivo</h2>
                         <p><?= nl2br(e($dados['objetivo'] ?? '')) ?></p>
                     </div>
                     <div>
-                        <h2 class="h6">Referências</h2>
+                        <h2 class="h6 text-uppercase">Referências</h2>
                         <?php if (!empty($dados['referencias'])): ?>
                             <ul class="list-unstyled">
                                 <?php foreach ($dados['referencias'] as $ref): ?>
@@ -64,10 +64,10 @@ function e($str) { return htmlspecialchars((string)$str, ENT_QUOTES, 'UTF-8'); }
             <!-- Coluna Direita: Experiências -->
             <div class="col-12 col-md-8">
                 <div class="d-flex justify-content-between align-items-center mb-3">
-                    <h2 class="h5">Experiências Profissionais</h2>
+                    <h2 class="h5 section-title">Experiências Profissionais</h2>
                     <div class="no-print">
                         <button class="btn btn-primary btn-sm me-2" onclick="window.print()">Imprimir</button>
-                        <button class="btn btn-secondary btn-sm" onclick="window.print()">Baixar PDF</button>
+                        <button class="btn btn-secondary btn-sm" id="btn-baixar">Baixar PDF</button>
                     </div>
                 </div>
 
@@ -93,6 +93,18 @@ function e($str) { return htmlspecialchars((string)$str, ENT_QUOTES, 'UTF-8'); }
 
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      // Após imprimir/baixar PDF, redireciona para a página de sucesso
+      function redirectSucesso(){ window.location.href = 'sucesso.php'; }
+      document.getElementById('btn-baixar')?.addEventListener('click', function(){
+        window.print();
+        // Fallback para navegadores sem onafterprint
+        setTimeout(redirectSucesso, 400);
+      });
+      if ('onafterprint' in window) {
+        window.onafterprint = redirectSucesso;
+      }
+    </script>
 </body>
 </html>
 <?php

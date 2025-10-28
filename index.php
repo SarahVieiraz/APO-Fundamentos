@@ -50,7 +50,7 @@
 
                             <hr class="my-4">
                             <div class="d-flex justify-content-between align-items-center mb-2">
-                                <h2 class="h5 m-0">Experiências Profissionais</h2>
+                                <h2 class="h5 m-0 section-title">Experiências Profissionais</h2>
                                 <button type="button" id="add-exp-btn" class="btn btn-sm btn-primary">+ Adicionar</button>
                             </div>
                             <div id="experiencias-container">
@@ -84,7 +84,7 @@
 
                             <hr class="my-4">
                             <div class="d-flex justify-content-between align-items-center mb-2">
-                                <h2 class="h5 m-0">Referências</h2>
+                                <h2 class="h5 m-0 section-title">Referências</h2>
                                 <button type="button" id="add-ref-btn" class="btn btn-sm btn-primary">+ Adicionar</button>
                             </div>
                             <div id="referencias-container">
